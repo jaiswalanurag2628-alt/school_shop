@@ -33,7 +33,6 @@
     @page { size: 80mm auto; margin: 2mm; }
   </style>
   <style>
-    /* Perforated Thermal Paper Edge Visual */
     .thermal-paper {
       position: relative;
       background: #ffffff;
@@ -95,7 +94,7 @@
         <div class="flex items-center gap-0.5 tracking-tight">
           <span class="text-white font-extrabold text-xl">SCHOOL</span><span class="text-mitra-orange font-extrabold text-xl">MITRA</span>
         </div>
-        <button onclick="toggleSidebar()" class="lg:hidden text-white/80 hover:text-white p-2 rounded-lg">
+        <button type="button" onclick="toggleSidebar()" class="lg:hidden text-white/80 hover:text-white p-2 rounded-lg">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -109,45 +108,45 @@
 
       <nav class="flex-1 overflow-y-auto py-3 px-2.5 space-y-1">
         <div class="px-2.5 pt-1 pb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Counter & Sales</div>
-        <button onclick="switchTab('pos')" id="nav-pos" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold bg-mitra-navy text-white shadow-xs text-left">
+        <button type="button" onclick="switchTab('pos')" id="nav-pos" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold bg-mitra-navy text-white shadow-xs text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-cash-register w-4 text-center"></i>Counter Billing (POS)</span>
         </button>
-        <button onclick="switchTab('held')" id="nav-held" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('held')" id="nav-held" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-pause-circle w-4 text-center text-slate-500"></i>Hold / Parked Bills</span>
           <span id="sidebarHeldBadge" class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-100 text-amber-800">1</span>
         </button>
-        <button onclick="switchTab('exchange')" id="nav-exchange" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('exchange')" id="nav-exchange" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-right-left w-4 text-center text-slate-500"></i>Return / Exchange</span>
         </button>
 
         <div class="px-2.5 pt-3 pb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Inventory & Suppliers</div>
-        <button onclick="switchTab('catalog')" id="nav-catalog" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('catalog')" id="nav-catalog" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-boxes-stacked w-4 text-center text-slate-500"></i>Catalog & Class Kits</span>
         </button>
-        <button onclick="switchTab('suppliers')" id="nav-suppliers" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('suppliers')" id="nav-suppliers" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-building-user w-4 text-center text-slate-500"></i>Suppliers / Vendors</span>
           <span id="sidebarSupplierBadge" class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-blue-100 text-mitra-navy">3</span>
         </button>
-        <button onclick="switchTab('inward')" id="nav-inward" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('inward')" id="nav-inward" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-truck-ramp-box w-4 text-center text-slate-500"></i>Stock Inward (GRN)</span>
         </button>
-        <button onclick="switchTab('stockExpiry')" id="nav-stockExpiry" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('stockExpiry')" id="nav-stockExpiry" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-hourglass-half w-4 text-center text-slate-500"></i>Stock & Expiry</span>
           <span id="sidebarExpiryBadge" class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-rose-100 text-rose-700">2</span>
         </button>
 
         <div class="px-2.5 pt-3 pb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Reports & Audit</div>
-        <button onclick="switchTab('salesReport')" id="nav-salesReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('salesReport')" id="nav-salesReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-file-invoice-dollar w-4 text-center text-slate-500"></i>Sales & Issued Report</span>
         </button>
-        <button onclick="switchTab('dueReport')" id="nav-dueReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('dueReport')" id="nav-dueReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-hand-holding-dollar w-4 text-center text-slate-500"></i>Outstanding & Dues</span>
           <span id="sidebarDueBadge" class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-rose-100 text-rose-700">2</span>
         </button>
-        <button onclick="switchTab('returnReport')" id="nav-returnReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('returnReport')" id="nav-returnReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-clipboard-list w-4 text-center text-slate-500"></i>Return & Exchange Log</span>
         </button>
-        <button onclick="switchTab('zReport')" id="nav-zReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left">
+        <button type="button" onclick="switchTab('zReport')" id="nav-zReport" class="nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer">
           <span class="flex items-center gap-2.5"><i class="fa-solid fa-vault w-4 text-center text-slate-500"></i>Day-End Cash (Z-Report)</span>
         </button>
       </nav>
@@ -164,7 +163,7 @@
       <!-- Top Header Bar -->
       <header class="bg-white border-b border-slate-200 px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-20 shadow-xs">
         <div class="flex items-center gap-3">
-          <button onclick="toggleSidebar()" class="lg:hidden p-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50">
+          <button type="button" onclick="toggleSidebar()" class="lg:hidden p-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50">
             <i class="fa-solid fa-bars"></i>
           </button>
           <div class="flex flex-wrap items-center gap-2">
@@ -189,7 +188,7 @@
             <i class="fa-solid fa-print text-amber-300"></i>
             <span id="headerPrinterStatusText">POS Printer: Driver / USB</span>
           </button>
-          <button onclick="switchTab('zReport')" class="flex items-center gap-2 bg-mitra-green hover:bg-emerald-800 text-white px-4 py-2 rounded-full text-xs font-bold shadow-xs cursor-pointer">
+          <button type="button" onclick="switchTab('zReport')" class="flex items-center gap-2 bg-mitra-green hover:bg-emerald-800 text-white px-4 py-2 rounded-full text-xs font-bold shadow-xs cursor-pointer">
             <span>Today's Collection:</span>
             <span id="todaysCollectionBadge">₹2,400</span>
           </button>
@@ -203,7 +202,7 @@
           <i class="fa-solid fa-chevron-right text-[10px]"></i>
           <span id="breadcrumbCurrent" class="font-bold text-mitra-navy">Counter Billing (POS)</span>
         </div>
-        <button id="topExpiryAlertBanner" onclick="switchTab('stockExpiry')" class="text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full hover:bg-rose-100 cursor-pointer">
+        <button type="button" id="topExpiryAlertBanner" onclick="switchTab('stockExpiry')" class="text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full hover:bg-rose-100 cursor-pointer">
           <i class="fa-solid fa-triangle-exclamation mr-1"></i>
           <span id="topExpiryAlertText">2 Batch Alerts (1 Expired, 1 Expiring &lt;30d)</span>
         </button>
@@ -440,7 +439,7 @@
                 <h2 class="text-base font-bold text-slate-800">Hold / Parked Parent Bills</h2>
                 <p class="text-xs text-slate-500">Resume paused parent carts without losing items or discounts.</p>
               </div>
-              <button onclick="switchTab('pos')" class="px-3.5 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer">Back to POS</button>
+              <button type="button" onclick="switchTab('pos')" class="px-3.5 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer">Back to POS</button>
             </div>
             <div id="heldBillsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
           </div>
@@ -492,10 +491,9 @@
         </section>
 
         <!-- ========================================================= -->
-        <!-- TAB 4: CATALOG & CLASS KITS (CLEAN FULL-WIDTH SUB-TABS)   -->
+        <!-- TAB 4: CATALOG & CLASS KITS                               -->
         <!-- ========================================================= -->
         <section id="tab-catalog" class="tab-view hidden space-y-5">
-          <!-- Sub-tab Navigation Bar -->
           <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-2 flex flex-wrap gap-2">
             <button type="button" id="catSubBtn-products" onclick="switchCatalogSubTab('products')" class="cat-sub-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-mitra-navy text-white cursor-pointer">
               1. Categories & Products
@@ -662,7 +660,6 @@
         <!-- TAB 5: DEDICATED SUPPLIERS / VENDORS PAGE                 -->
         <!-- ========================================================= -->
         <section id="tab-suppliers" class="tab-view hidden space-y-6">
-          <!-- KPI Row -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
               <span class="text-xs font-semibold text-slate-500 uppercase">Total Registered Vendors</span>
@@ -686,7 +683,6 @@
             </div>
           </div>
 
-          <!-- Add / Edit Supplier Form -->
           <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 space-y-5">
             <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
               <div>
@@ -701,7 +697,6 @@
             <form id="supplierForm" onsubmit="handleSaveSupplier(event)" class="space-y-5">
               <input type="hidden" id="editSupplierId" value="" />
 
-              <!-- Section A: Firm & Contact Info -->
               <div class="space-y-3">
                 <h3 class="text-xs font-bold uppercase tracking-wider text-mitra-navy">A. Firm & Contact Information</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -741,7 +736,6 @@
                 </div>
               </div>
 
-              <!-- Section B: Tax Compliance & Billing Address -->
               <div class="space-y-3 pt-2 border-t border-slate-100">
                 <h3 class="text-xs font-bold uppercase tracking-wider text-mitra-navy">B. Tax Compliance (GST / PAN) & Billing Address</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -779,7 +773,6 @@
                 </div>
               </div>
 
-              <!-- Section C: Commercial Terms & Bank / UPI Details -->
               <div class="space-y-3 pt-2 border-t border-slate-100">
                 <h3 class="text-xs font-bold uppercase tracking-wider text-mitra-navy">C. Payment Terms, Credit Limit & Bank / UPI Details</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -834,7 +827,6 @@
             </form>
           </div>
 
-          <!-- Full-Width Supplier Directory Table -->
           <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 space-y-4">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
               <div>
@@ -1010,7 +1002,7 @@
                   <option value="near">Expiring Within 30 Days</option>
                   <option value="low">Low Stock Alerts</option>
                 </select>
-                <button onclick="exportTableCsv('stock')" class="px-3 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 cursor-pointer">
+                <button type="button" onclick="exportTableCsv('stock')" class="px-3 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 cursor-pointer">
                   <i class="fa-solid fa-file-csv mr-1 text-emerald-700"></i>Export CSV
                 </button>
               </div>
@@ -1095,8 +1087,8 @@
                   <option value="Split (Cash + UPI)">Split (Cash + UPI)</option>
                   <option value="Fee Ledger Due">Fee Ledger Due</option>
                 </select>
-                <button onclick="exportTableCsv('sales')" class="px-3 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 cursor-pointer"><i class="fa-solid fa-file-csv mr-1 text-emerald-700"></i>CSV</button>
-                <button onclick="printActiveReport()" class="px-3 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print</button>
+                <button type="button" onclick="exportTableCsv('sales')" class="px-3 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 cursor-pointer"><i class="fa-solid fa-file-csv mr-1 text-emerald-700"></i>CSV</button>
+                <button type="button" onclick="printActiveReport()" class="px-3 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print</button>
               </div>
             </div>
 
@@ -1136,11 +1128,219 @@
         </section>
 
         <!-- ========================================================= -->
+        <!-- TAB 9: OUTSTANDING & DUES REPORT                          -->
+        <!-- ========================================================= -->
+        <section id="tab-dueReport" class="tab-view hidden space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <span class="text-xs font-semibold text-slate-500 uppercase">Total Outstanding Dues</span>
+              <p id="drTotalOutstanding" class="text-2xl font-extrabold text-rose-700 mt-1">₹0</p>
+              <span class="text-[11px] text-slate-500">Synced with Student Fee Ledger</span>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <span class="text-xs font-semibold text-slate-500 uppercase">Dues Collected Today</span>
+              <p id="drCollectedToday" class="text-2xl font-extrabold text-emerald-700 mt-1">₹400</p>
+              <span class="text-[11px] text-slate-500">Added to Drawer Cash</span>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <span class="text-xs font-semibold text-slate-500 uppercase">Pending Receipts</span>
+              <p id="drPendingCount" class="text-2xl font-extrabold text-mitra-navy mt-1">0</p>
+              <span class="text-[11px] text-slate-500">Awaiting parent settlement</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
+              <div>
+                <h2 class="text-base font-bold text-slate-800">Outstanding & Student Fee Ledger Dues</h2>
+                <p class="text-xs text-slate-500">Track unpaid shop balances and collect pending installments at the counter.</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <button type="button" onclick="exportTableCsv('dues')" class="px-3 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 cursor-pointer"><i class="fa-solid fa-file-csv mr-1 text-emerald-700"></i>CSV</button>
+                <button type="button" onclick="printActiveReport()" class="px-3 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print</button>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs">
+              <span class="font-bold text-slate-600">Issue Date Range:</span>
+              <input type="date" id="duesFromDate" onchange="renderDueReport()" class="px-2 py-1 border border-slate-300 rounded-lg bg-white" />
+              <span>to</span>
+              <input type="date" id="duesToDate" onchange="renderDueReport()" class="px-2 py-1 border border-slate-300 rounded-lg bg-white" />
+              <div class="flex flex-wrap gap-1 ml-auto">
+                <button type="button" onclick="applyDatePreset('dues','today')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">Today</button>
+                <button type="button" onclick="applyDatePreset('dues','7days')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">Last 7 Days</button>
+                <button type="button" onclick="applyDatePreset('dues','month')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">This Month</button>
+                <button type="button" onclick="applyDatePreset('dues','clear')" class="px-2 py-1 rounded bg-slate-200 font-semibold cursor-pointer">Clear</button>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+              <table class="w-full text-left border-collapse min-w-[820px] text-xs sm:text-sm">
+                <thead class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-600">
+                  <tr>
+                    <th class="py-3 px-3">Receipt & Date</th>
+                    <th class="py-3 px-3">Student & Class</th>
+                    <th class="py-3 px-3">Mobile</th>
+                    <th class="py-3 px-3">Item Issued</th>
+                    <th class="py-3 px-3 text-right">Bill Total</th>
+                    <th class="py-3 px-3 text-right">Paid</th>
+                    <th class="py-3 px-3 text-right">Balance Due</th>
+                    <th class="py-3 px-3 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="dueReportBody" class="divide-y divide-slate-100"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 10: RETURN & EXCHANGE AUDIT LOG                       -->
+        <!-- ========================================================= -->
+        <section id="tab-returnReport" class="tab-view hidden space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <span class="text-xs font-semibold text-slate-500 uppercase">Uniform Size Swaps</span>
+              <p id="rrSwapCount" class="text-2xl font-extrabold text-mitra-navy mt-1">0</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <span class="text-xs font-semibold text-slate-500 uppercase">Full Returns / Cancellations</span>
+              <p id="rrCancelCount" class="text-2xl font-extrabold text-rose-700 mt-1">0</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <span class="text-xs font-semibold text-slate-500 uppercase">Total Cash Refunded</span>
+              <p id="rrRefundValue" class="text-2xl font-extrabold text-amber-600 mt-1">₹0</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
+              <h2 class="text-base font-bold text-slate-800">Return & Size Exchange Audit Log</h2>
+              <div class="flex flex-wrap items-center gap-2">
+                <button type="button" onclick="exportTableCsv('returns')" class="px-3 py-2 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 cursor-pointer"><i class="fa-solid fa-file-csv mr-1 text-emerald-700"></i>CSV</button>
+                <button type="button" onclick="printActiveReport()" class="px-3 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print</button>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs">
+              <span class="font-bold text-slate-600">Action Date Range:</span>
+              <input type="date" id="returnsFromDate" onchange="renderReturnReport()" class="px-2 py-1 border border-slate-300 rounded-lg bg-white" />
+              <span>to</span>
+              <input type="date" id="returnsToDate" onchange="renderReturnReport()" class="px-2 py-1 border border-slate-300 rounded-lg bg-white" />
+              <div class="flex flex-wrap gap-1 ml-auto">
+                <button type="button" onclick="applyDatePreset('returns','today')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">Today</button>
+                <button type="button" onclick="applyDatePreset('returns','7days')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">Last 7 Days</button>
+                <button type="button" onclick="applyDatePreset('returns','month')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">This Month</button>
+                <button type="button" onclick="applyDatePreset('returns','clear')" class="px-2 py-1 rounded bg-slate-200 font-semibold cursor-pointer">Clear</button>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto border border-slate-200 rounded-xl">
+              <table class="w-full text-left border-collapse min-w-[820px] text-xs sm:text-sm">
+                <thead class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-600">
+                  <tr>
+                    <th class="py-3 px-3">Date & Time</th>
+                    <th class="py-3 px-3">Receipt No</th>
+                    <th class="py-3 px-3">Student</th>
+                    <th class="py-3 px-3">Action Type</th>
+                    <th class="py-3 px-3">Stock Movement</th>
+                    <th class="py-3 px-3">Reason</th>
+                    <th class="py-3 px-3 text-right">Refund / Adj</th>
+                  </tr>
+                </thead>
+                <tbody id="returnReportBody" class="divide-y divide-slate-100"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 11: DAY-END CASH REGISTER (Z-REPORT)                  -->
+        <!-- ========================================================= -->
+        <section id="tab-zReport" class="tab-view hidden space-y-6">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
+              <div>
+                <h2 class="text-base font-bold text-slate-800">Day-End Cash Register & Z-Report Reconciliation</h2>
+                <p id="zrSubtitle" class="text-xs text-slate-500">Session 2026-27 • KUAMR STORE</p>
+              </div>
+              <button type="button" onclick="printActiveReport()" class="px-4 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print Z-Report</button>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs">
+              <span class="font-bold text-slate-600">Shift Date Range:</span>
+              <input type="date" id="zFromDate" value="2026-11-17" onchange="renderZReport()" class="px-2 py-1 border border-slate-300 rounded-lg bg-white" />
+              <span>to</span>
+              <input type="date" id="zToDate" value="2026-11-17" onchange="renderZReport()" class="px-2 py-1 border border-slate-300 rounded-lg bg-white" />
+              <div class="flex flex-wrap gap-1 ml-auto">
+                <button type="button" onclick="applyDatePreset('z','today')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">Today</button>
+                <button type="button" onclick="applyDatePreset('z','7days')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">Last 7 Days</button>
+                <button type="button" onclick="applyDatePreset('z','month')" class="px-2 py-1 rounded bg-white border border-slate-300 font-semibold cursor-pointer">This Month</button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 text-sm">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-mitra-navy">Channel-Wise Collection Breakdown</h3>
+                <div class="flex justify-between py-1.5 border-b border-slate-200">
+                  <span class="text-slate-600">Opening Cash Drawer Float</span>
+                  <span class="font-bold">₹2,000</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-slate-200">
+                  <span class="text-slate-600">Cash Sales Collected</span>
+                  <span id="zrCashSales" class="font-bold text-emerald-700">+ ₹0</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-slate-200">
+                  <span class="text-slate-600">UPI / QR Digital Receipts</span>
+                  <span id="zrUpiSales" class="font-bold text-indigo-700">₹0</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-slate-200">
+                  <span class="text-slate-600">Debit / Credit Card Swipes</span>
+                  <span id="zrCardSales" class="font-bold text-slate-800">₹0</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-slate-200">
+                  <span class="text-slate-600">Credit Synced to Student Fee Ledger</span>
+                  <span id="zrLedgerCredit" class="font-bold text-amber-700">₹0</span>
+                </div>
+                <div class="flex justify-between py-1.5">
+                  <span class="text-slate-600">Cash Refunds / Cancellations</span>
+                  <span id="zrCashRefunds" class="font-bold text-rose-700">- ₹0</span>
+                </div>
+              </div>
+
+              <div class="space-y-4 bg-blue-50/70 p-5 rounded-2xl border border-blue-200 flex flex-col justify-between">
+                <div class="space-y-3">
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-mitra-navy">Physical Drawer Audit</h3>
+                  <div class="flex justify-between items-center bg-white p-3 rounded-xl border border-blue-200">
+                    <span class="text-xs font-bold text-slate-600">Expected Cash in Drawer:</span>
+                    <span id="zrExpectedCash" class="text-xl font-extrabold text-mitra-navy">₹2,000</span>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Physical Cash Counted by Cashier (₹)</label>
+                    <input type="number" id="zrPhysicalCashInput" oninput="updateZReportVariance()" class="w-full px-3.5 py-2.5 text-lg font-extrabold border border-slate-300 rounded-xl bg-white" />
+                  </div>
+                  <div class="flex justify-between items-center bg-white p-3 rounded-xl border border-slate-200">
+                    <span class="text-xs font-bold text-slate-600">Cashier Drawer Variance:</span>
+                    <span id="zrVarianceAmount" class="text-sm font-extrabold text-emerald-700">₹0 (Balanced)</span>
+                  </div>
+                </div>
+                <button type="button" onclick="closeCashierShift()" class="w-full py-3 rounded-xl bg-mitra-green hover:bg-emerald-800 text-white text-sm font-bold shadow-xs cursor-pointer">
+                  <i class="fa-solid fa-lock mr-1.5"></i>Verify & Lock Shift Z-Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
   <!-- MODAL 1: POS THERMAL (80MM / 58MM) & A5 RECEIPT PREVIEW   -->
   <!-- ========================================================= -->
   <div id="receiptModal" class="fixed inset-0 z-50 bg-slate-900/70 hidden items-center justify-center p-4 overflow-y-auto">
     <div class="bg-slate-200 rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-300 my-auto">
-      <!-- Top Bar -->
       <div class="no-print bg-mitra-navy text-white px-5 py-3.5 flex flex-wrap items-center justify-between gap-2">
         <div class="flex items-center gap-2">
           <i class="fa-solid fa-receipt text-amber-300"></i>
@@ -1150,11 +1350,10 @@
           <button type="button" onclick="connectThermalSerialPrinter()" class="px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-semibold cursor-pointer">
             <i class="fa-solid fa-usb mr-1"></i><span id="modalPrinterBtnLabel">Connect USB ESC/POS</span>
           </button>
-          <button onclick="closeReceiptModal()" class="text-white/80 hover:text-white p-1 cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+          <button type="button" onclick="closeReceiptModal()" class="text-white/80 hover:text-white p-1 cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
 
-      <!-- Roll Size Format Selector Strip -->
       <div class="no-print bg-white border-b border-slate-200 px-5 py-2.5 flex flex-wrap items-center justify-between gap-2">
         <div class="inline-flex rounded-xl bg-slate-100 p-1 gap-1">
           <button type="button" id="fmtBtn-80mm" onclick="setReceiptFormat('80mm')" class="rcpt-fmt-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-mitra-navy text-white shadow-xs cursor-pointer">
@@ -1170,11 +1369,9 @@
         <span id="rcptPaperSpecLabel" class="text-[11px] font-mono text-slate-500">Paper: 80mm Roll • Printable: 72mm</span>
       </div>
 
-      <!-- Printable Thermal Paper Container -->
       <div class="p-5 flex justify-center overflow-y-auto max-h-[68vh]">
         <div id="receiptPrintWrapper" class="thermal-paper w-full max-w-[330px] transition-all duration-200">
           <div id="receiptPrintArea" class="px-4 py-4 text-slate-900 font-mono text-[11px] leading-snug space-y-2.5 bg-white">
-            <!-- School & Shop Header -->
             <div class="text-center border-b border-dashed border-slate-400 pb-2.5 space-y-0.5">
               <p class="text-[10px] font-bold tracking-widest uppercase text-slate-500">*** TAX INVOICE / CASH MEMO ***</p>
               <h2 class="text-sm font-bold text-slate-950 uppercase tracking-tight">MIRZA ANWAR BAIG INTER COLLEGE</h2>
@@ -1183,7 +1380,6 @@
               <p class="text-[10px] text-slate-600">Ph: +91-98370-00112 • Counter-01</p>
             </div>
 
-            <!-- Receipt & Student Meta -->
             <div class="border-b border-dashed border-slate-400 pb-2 space-y-0.5 text-[10.5px]">
               <div class="flex justify-between">
                 <span>BILL NO: <strong id="rcptNo">RCP-2026-106</strong></span>
@@ -1202,7 +1398,6 @@
               </div>
             </div>
 
-            <!-- Itemized Table -->
             <div>
               <div class="grid grid-cols-12 font-bold border-b border-dashed border-slate-400 pb-1 text-[10px] uppercase">
                 <span class="col-span-6">ITEM / SKU</span>
@@ -1213,7 +1408,6 @@
               <div id="rcptItemsBody" class="divide-y divide-dotted divide-slate-300 py-1"></div>
             </div>
 
-            <!-- Totals & Tax Breakdown -->
             <div class="border-t border-dashed border-slate-400 pt-2 space-y-1 text-[10.5px]">
               <div class="flex justify-between">
                 <span>TAXABLE SUB-TOTAL:</span>
@@ -1242,12 +1436,10 @@
               </div>
             </div>
 
-            <!-- Fee Ledger Notice -->
             <div id="rcptLedgerNote" class="hidden text-[10px] text-center border border-dashed border-slate-400 p-1.5 font-bold">
               * DUE SYNCED TO STUDENT FEE LEDGER *
             </div>
 
-            <!-- Barcode & Thermal Footer -->
             <div class="border-t border-dashed border-slate-400 pt-2.5 text-center space-y-1">
               <div id="rcptBarcodeGraphic" class="font-mono text-xs tracking-[0.2em] font-bold">||||| RCP2026106 |||||</div>
               <p class="text-[9.5px] text-slate-600">Exchange within 7 days with original receipt & tags.</p>
@@ -1257,11 +1449,10 @@
         </div>
       </div>
 
-      <!-- Action Footer -->
       <div class="no-print bg-white px-5 py-3.5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
         <span class="text-[11px] text-slate-500"><i class="fa-solid fa-circle-info mr-1 text-mitra-navy"></i>Supports Epson, TVS, Rugtek & Xprinter</span>
         <div class="flex flex-wrap items-center gap-2">
-          <button onclick="closeReceiptModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-semibold cursor-pointer">Close</button>
+          <button type="button" onclick="closeReceiptModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-semibold cursor-pointer">Close</button>
           <button type="button" id="escPosDirectPrintBtn" onclick="printDirectEscPos()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold cursor-pointer">
             <i class="fa-solid fa-bolt text-amber-300 mr-1"></i>ESC/POS Raw Cut
           </button>
@@ -1274,18 +1465,49 @@
   </div>
 
   <!-- ========================================================= -->
+  <!-- MODAL 2: UNIFORM SIZE SWAP MODAL                          -->
+  <!-- ========================================================= -->
+  <div id="sizeSwapModal" class="fixed inset-0 z-50 bg-slate-900/60 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200">
+      <div class="bg-mitra-navy text-white px-5 py-3.5 flex items-center justify-between">
+        <span class="font-bold text-sm"><i class="fa-solid fa-right-left mr-1.5 text-amber-300"></i>Uniform Size Exchange</span>
+        <button type="button" onclick="closeSizeSwapModal()" class="text-white/80 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-5 space-y-4 text-xs sm:text-sm">
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <p class="text-slate-500">Receipt: <strong id="swapReceiptNo" class="text-mitra-navy font-mono">-</strong></p>
+          <p class="text-slate-500">Issued Item: <strong id="swapCurrentItem" class="text-slate-800">-</strong></p>
+          <p class="text-slate-500">Exchange Qty: <strong id="swapQty" class="text-slate-800">1</strong></p>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Select Replacement Size / Variant <span class="text-rose-500">*</span></label>
+          <select id="swapTargetVariant" class="w-full px-3 py-2.5 text-sm border border-slate-300 rounded-xl bg-white"></select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Exchange Reason</label>
+          <input type="text" id="swapReasonInput" placeholder="e.g. Parent requested next size up" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl bg-slate-50" />
+        </div>
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" onclick="closeSizeSwapModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-semibold cursor-pointer">Cancel</button>
+          <button type="button" onclick="confirmSizeSwap()" class="px-4 py-2 rounded-xl bg-mitra-navy hover:bg-mitra-navyDark text-white text-xs font-bold cursor-pointer">Confirm Size Swap</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
   <!-- MODAL 3: BARCODE & MRP STICKER GENERATOR                  -->
   <!-- ========================================================= -->
   <div id="barcodeModal" class="fixed inset-0 z-50 bg-slate-900/60 hidden items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-200">
       <div class="no-print bg-slate-800 text-white px-5 py-3.5 flex items-center justify-between">
         <span class="font-bold text-sm">Printable Barcode & MRP Stickers</span>
-        <button onclick="closeBarcodeModal()" class="text-white/80 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" onclick="closeBarcodeModal()" class="text-white/80 hover:text-white cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div id="barcodePrintArea" class="p-5 grid grid-cols-2 sm:grid-cols-3 gap-3 bg-white max-h-[70vh] overflow-y-auto"></div>
       <div class="no-print bg-slate-50 px-5 py-3.5 border-t border-slate-200 flex justify-end gap-2">
-        <button onclick="closeBarcodeModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-semibold cursor-pointer">Close</button>
-        <button onclick="triggerBarcodePrint()" class="px-4 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print Sheet</button>
+        <button type="button" onclick="closeBarcodeModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-semibold cursor-pointer">Close</button>
+        <button type="button" onclick="triggerBarcodePrint()" class="px-4 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer"><i class="fa-solid fa-print mr-1"></i>Print Sheet</button>
       </div>
     </div>
   </div>
@@ -1317,7 +1539,892 @@
       lastReceiptData: null,
       selectedStudent: null,
       customerMode: 'student',
-// ... existing code ... -->
+      posShelfFilter: 'ALL',
+      swapTransactionId: null,
+      cart: [],
+
+      students: [
+        { admNo: 'ADM-1042', rfid: 'RFID-8801', name: 'Aarav Sharma', className: 'Class 5', section: '5-A', fatherName: 'Rajesh Sharma', mobile: '9837045120', address: 'Civil Lines, Bijnor' },
+        { admNo: 'ADM-1089', rfid: 'RFID-8802', name: 'Ananya Verma', className: 'Class 3', section: '3-B', fatherName: 'Suresh Verma', mobile: '9412267810', address: 'Shastri Nagar, Bijnor' },
+        { admNo: 'ADM-1104', rfid: 'RFID-8803', name: 'Kabir Khan', className: 'Class 8', section: '8-A', fatherName: 'Imran Khan', mobile: '9758011234', address: 'Noorpur Road, Bijnor' },
+        { admNo: 'ADM-1120', rfid: 'RFID-8804', name: 'Riya Singh', className: 'Class 10', section: '10-B', fatherName: 'Vikram Singh', mobile: '9927088431', address: 'Station Road, Bijnor' }
+      ],
+
+      categories: ['DRESS', 'BOOKS', 'STATIONERY'],
+
+      products: [
+        { id: 'P1', category: 'DRESS', name: 'House T-Shirt', gst: 5, trackExpiry: false },
+        { id: 'P2', category: 'DRESS', name: 'School Trouser / Pant', gst: 5, trackExpiry: false },
+        { id: 'P3', category: 'DRESS', name: 'Monogram School Tie', gst: 5, trackExpiry: false },
+        { id: 'P4', category: 'BOOKS', name: 'Complete NCERT Book Set', gst: 0, trackExpiry: false },
+        { id: 'P5', category: 'STATIONERY', name: 'School Monogram Notebook Pack', gst: 12, trackExpiry: false },
+        { id: 'P6', category: 'STATIONERY', name: 'Fevicol Craft Glue (200ml)', gst: 18, trackExpiry: true },
+        { id: 'P7', category: 'STATIONERY', name: 'Camlin Poster Colors (12 Shades)', gst: 18, trackExpiry: true },
+        { id: 'P8', category: 'STATIONERY', name: 'Whiteboard Marker Refill Ink', gst: 18, trackExpiry: true }
+      ],
+
+      variants: [
+        { id: 'V1', productId: 'P1', sku: 'UNI-TSH-S', size: 'S (28)', color: 'White', subject: '', sellPrice: 320, costPrice: 210, reorder: 15 },
+        { id: 'V2', productId: 'P1', sku: 'UNI-TSH-M', size: 'M (32)', color: 'White', subject: '', sellPrice: 350, costPrice: 230, reorder: 15 },
+        { id: 'V3', productId: 'P1', sku: 'UNI-TSH-L', size: 'L (36)', color: 'White', subject: '', sellPrice: 380, costPrice: 250, reorder: 12 },
+        { id: 'V4', productId: 'P2', sku: 'UNI-PNT-30', size: '30', color: 'Navy Blue', subject: '', sellPrice: 480, costPrice: 320, reorder: 12 },
+        { id: 'V5', productId: 'P2', sku: 'UNI-PNT-32', size: '32', color: 'Navy Blue', subject: '', sellPrice: 510, costPrice: 340, reorder: 12 },
+        { id: 'V6', productId: 'P3', sku: 'UNI-TIE-STD', size: 'Standard', color: 'Navy / Maroon', subject: '', sellPrice: 120, costPrice: 65, reorder: 25 },
+        { id: 'V7', productId: 'P4', sku: 'BK-CLS3-SET', size: 'Class 3', color: '2026 Edition', subject: 'All Subjects', sellPrice: 1450, costPrice: 1120, reorder: 10 },
+        { id: 'V8', productId: 'P4', sku: 'BK-CLS5-SET', size: 'Class 5', color: '2026 Edition', subject: 'All Subjects', sellPrice: 1850, costPrice: 1420, reorder: 10 },
+        { id: 'V9', productId: 'P4', sku: 'BK-CLS8-SET', size: 'Class 8', color: '2026 Edition', subject: 'All Subjects', sellPrice: 2250, costPrice: 1750, reorder: 8 },
+        { id: 'V10', productId: 'P4', sku: 'BK-CLS10-SET', size: 'Class 10', color: '2026 Edition', subject: 'All Subjects', sellPrice: 2650, costPrice: 2050, reorder: 8 },
+        { id: 'V11', productId: 'P5', sku: 'STN-NB-12PK', size: 'A4 (12 Pack)', color: 'Ruled', subject: '', sellPrice: 480, costPrice: 340, reorder: 20 },
+        { id: 'V12', productId: 'P6', sku: 'STN-GLU-200', size: '200 ml', color: 'White', subject: '', sellPrice: 85, costPrice: 52, reorder: 10 },
+        { id: 'V13', productId: 'P7', sku: 'STN-CLR-12', size: '12 x 15ml', color: 'Assorted', subject: '', sellPrice: 160, costPrice: 105, reorder: 10 },
+        { id: 'V14', productId: 'P8', sku: 'STN-INK-BLK', size: '100 ml', color: 'Black', subject: '', sellPrice: 95, costPrice: 58, reorder: 8 }
+      ],
+
+      stockBatches: [
+        { id: 'SB-01', variantId: 'V1', batchNo: 'UNI-26A', expiryDate: '', qtyAvailable: 34, supplier: 'Vardhman School Uniforms Pvt Ltd', receivedDate: '2026-04-05' },
+        { id: 'SB-02', variantId: 'V2', batchNo: 'UNI-26A', expiryDate: '', qtyAvailable: 42, supplier: 'Vardhman School Uniforms Pvt Ltd', receivedDate: '2026-04-05' },
+        { id: 'SB-03', variantId: 'V3', batchNo: 'UNI-26A', expiryDate: '', qtyAvailable: 19, supplier: 'Vardhman School Uniforms Pvt Ltd', receivedDate: '2026-04-05' },
+        { id: 'SB-04', variantId: 'V4', batchNo: 'UNI-26B', expiryDate: '', qtyAvailable: 28, supplier: 'Vardhman School Uniforms Pvt Ltd', receivedDate: '2026-04-08' },
+        { id: 'SB-05', variantId: 'V5', batchNo: 'UNI-26B', expiryDate: '', qtyAvailable: 22, supplier: 'Vardhman School Uniforms Pvt Ltd', receivedDate: '2026-04-08' },
+        { id: 'SB-06', variantId: 'V6', batchNo: 'UNI-26C', expiryDate: '', qtyAvailable: 65, supplier: 'Vardhman School Uniforms Pvt Ltd', receivedDate: '2026-04-10' },
+        { id: 'SB-07', variantId: 'V7', batchNo: 'NCERT-26', expiryDate: '', qtyAvailable: 24, supplier: 'Gupta Educational Book Depot', receivedDate: '2026-04-02' },
+        { id: 'SB-08', variantId: 'V8', batchNo: 'NCERT-26', expiryDate: '', qtyAvailable: 31, supplier: 'Gupta Educational Book Depot', receivedDate: '2026-04-02' },
+        { id: 'SB-09', variantId: 'V9', batchNo: 'NCERT-26', expiryDate: '', qtyAvailable: 14, supplier: 'Gupta Educational Book Depot', receivedDate: '2026-04-02' },
+        { id: 'SB-10', variantId: 'V10', batchNo: 'NCERT-26', expiryDate: '', qtyAvailable: 9, supplier: 'Gupta Educational Book Depot', receivedDate: '2026-04-02' },
+        { id: 'SB-11', variantId: 'V11', batchNo: 'STN-NB01', expiryDate: '', qtyAvailable: 55, supplier: 'Khandelwal Paper & Stationery Mart', receivedDate: '2026-04-12' },
+        { id: 'SB-12', variantId: 'V12', batchNo: 'GLU-25X', expiryDate: '2026-10-15', qtyAvailable: 12, supplier: 'Khandelwal Paper & Stationery Mart', receivedDate: '2026-03-10' },
+        { id: 'SB-13', variantId: 'V12', batchNo: 'GLU-26N', expiryDate: '2027-08-30', qtyAvailable: 30, supplier: 'Khandelwal Paper & Stationery Mart', receivedDate: '2026-10-01' },
+        { id: 'SB-14', variantId: 'V13', batchNo: 'CLR-26K', expiryDate: '2026-12-05', qtyAvailable: 16, supplier: 'Khandelwal Paper & Stationery Mart', receivedDate: '2026-05-14' },
+        { id: 'SB-15', variantId: 'V14', batchNo: 'INK-26M', expiryDate: '2027-06-20', qtyAvailable: 25, supplier: 'Khandelwal Paper & Stationery Mart', receivedDate: '2026-07-19' }
+      ],
+
+      classKits: {
+        'Class 3': ['V7', 'V11', 'V1', 'V6'],
+        'Class 5': ['V8', 'V11', 'V2', 'V4', 'V6'],
+        'Class 8': ['V9', 'V11', 'V3', 'V5'],
+        'Class 10': ['V10', 'V11', 'V3']
+      },
+
+      suppliers: [
+        {
+          id: 'SUP-1', code: 'SUP-001', firmName: 'Vardhman School Uniforms Pvt Ltd',
+          category: 'Uniforms & Tailoring', contactPerson: 'Ramesh Agarwal', mobile: '9837011220',
+          whatsapp: '9837011220', email: 'orders@vardhmanuniforms.in', gstin: '09AAACV4821F1Z5',
+          pan: 'AAACV4821F', state: '09 - Uttar Pradesh (CGST+SGST)',
+          address: 'Plot 14, Textile Industrial Estate, Delhi Road', city: 'Meerut', pincode: '250002',
+          paymentTerms: 'Net 30 Days', creditLimit: 250000, openingBalance: 12000,
+          bankName: 'Vardhman Uniforms - HDFC Bank', accNo: '50200048192011', ifsc: 'HDFC0001204',
+          upi: 'vardhmanuniforms@hdfcbank', status: 'Active', totalPurchased: 68500, totalPaid: 55000,
+          remarks: 'Primary summer & winter uniform manufacturer'
+        },
+        {
+          id: 'SUP-2', code: 'SUP-002', firmName: 'Gupta Educational Book Depot',
+          category: 'Books & Publications', contactPerson: 'Deepak Gupta', mobile: '9412233445',
+          whatsapp: '9412233445', email: 'guptabooks.bijnor@gmail.com', gstin: '09AAAFG8910K1Z2',
+          pan: 'AAAFG8910K', state: '09 - Uttar Pradesh (CGST+SGST)',
+          address: 'Sadar Bazar, Near Clock Tower', city: 'Bijnor', pincode: '246701',
+          paymentTerms: 'Credit on Session Sale', creditLimit: 400000, openingBalance: 0,
+          bankName: 'Gupta Book Depot - State Bank of India', accNo: '30918472615', ifsc: 'SBIN0000632',
+          upi: 'guptabooks@sbi', status: 'Active', totalPurchased: 142000, totalPaid: 118000,
+          remarks: 'NCERT & CBSE reference books distributor'
+        },
+        {
+          id: 'SUP-3', code: 'SUP-003', firmName: 'Khandelwal Paper & Stationery Mart',
+          category: 'Stationery & Art', contactPerson: 'Manoj Khandelwal', mobile: '9758099887',
+          whatsapp: '9758099887', email: 'sales@khandelwalstationery.com', gstin: '09AABCK7741M1Z8',
+          pan: 'AABCK7741M', state: '09 - Uttar Pradesh (CGST+SGST)',
+          address: 'Station Road, Opp. Old Tehsil', city: 'Bijnor', pincode: '246701',
+          paymentTerms: 'Net 15 Days', creditLimit: 100000, openingBalance: 4500,
+          bankName: 'Khandelwal Mart - Punjab National Bank', accNo: '0412002100094812', ifsc: 'PUNB0041200',
+          upi: 'khandelwalmart@pnb', status: 'Active', totalPurchased: 34200, totalPaid: 34200,
+          remarks: 'Custom monogram notebooks & lab stationery'
+        }
+      ],
+
+      grnHistory: [
+        { date: '2026-11-10', billNo: 'INV-2026-884', supplier: 'Vardhman School Uniforms Pvt Ltd', variantId: 'V2', batchNo: 'UNI-26A', expiryDate: '', qty: 30, cost: 230, sell: 350 },
+        { date: '2026-11-06', billNo: 'GED-419', supplier: 'Gupta Educational Book Depot', variantId: 'V8', batchNo: 'NCERT-26', expiryDate: '', qty: 25, cost: 1420, sell: 1850 },
+        { date: '2026-10-01', billNo: 'KPS-992', supplier: 'Khandelwal Paper & Stationery Mart', variantId: 'V12', batchNo: 'GLU-26N', expiryDate: '2027-08-30', qty: 30, cost: 52, sell: 85 }
+      ],
+
+      heldBills: [
+        {
+          id: 'HOLD-101',
+          heldAt: '10:35 AM',
+          customerName: 'Kabir Khan',
+          admClass: 'ADM-1104 (8-A)',
+          fatherName: 'Imran Khan',
+          contact: '9758011234',
+          note: 'Parent went to check blazer size',
+          items: [
+            { variantId: 'V9', qty: 1, concession: 50 },
+            { variantId: 'V11', qty: 1, concession: 0 }
+          ]
+        }
+      ],
+
+      transactions: [
+        {
+          id: 'TXN-101', receiptNo: 'RCP-2026-101', issueDate: '2026-11-17',
+          studentName: 'Ananya Verma', admClass: 'ADM-1089 (3-B)', contact: '9412267810',
+          category: 'BOOKS', variantId: 'V7', qty: 1, unitPrice: 1450, costPrice: 1120,
+          concession: 50, total: 1400, paid: 1400, cashPaid: 1400, upiPaid: 0, cardPaid: 0, due: 0,
+          mode: 'Cash', status: 'Issued'
+        },
+        {
+          id: 'TXN-102', receiptNo: 'RCP-2026-102', issueDate: '2026-11-17',
+          studentName: 'Riya Singh', admClass: 'ADM-1120 (10-B)', contact: '9927088431',
+          category: 'BOOKS', variantId: 'V10', qty: 1, unitPrice: 2650, costPrice: 2050,
+          concession: 0, total: 2650, paid: 1000, cashPaid: 0, upiPaid: 1000, cardPaid: 0, due: 1650,
+          mode: 'UPI / QR', status: 'Issued'
+        },
+        {
+          id: 'TXN-103', receiptNo: 'RCP-2026-103', issueDate: '2026-11-15',
+          studentName: 'Kabir Khan', admClass: 'ADM-1104 (8-A)', contact: '9758011234',
+          category: 'DRESS', variantId: 'V5', qty: 2, unitPrice: 510, costPrice: 340,
+          concession: 20, total: 1000, paid: 400, cashPaid: 400, upiPaid: 0, cardPaid: 0, due: 600,
+          mode: 'Fee Ledger Due', status: 'Issued'
+        },
+        {
+          id: 'TXN-104', receiptNo: 'RCP-2026-104', issueDate: '2026-11-14',
+          studentName: 'Aarav Sharma', admClass: 'ADM-1042 (5-A)', contact: '9837045120',
+          category: 'DRESS', variantId: 'V2', qty: 2, unitPrice: 350, costPrice: 230,
+          concession: 0, total: 700, paid: 700, cashPaid: 700, upiPaid: 0, cardPaid: 0, due: 0,
+          mode: 'Cash', status: 'Issued'
+        }
+      ],
+
+      returnLogs: [
+        {
+          dateIso: '2026-11-16', timeStr: '01:20 PM', receiptNo: 'RCP-2026-098',
+          studentName: 'Aarav Sharma (5-A)', actionType: 'Size Swap',
+          movement: 'House T-Shirt (Size: S (28), White) → House T-Shirt (Size: M (32), White) (x1)',
+          reason: 'Shoulder fit tight; exchanged with tags intact', refundAdj: 0
+        }
+      ]
+    };
+
+    // -----------------------------------------------------------
+    // CORE HELPERS & INVENTORY ENGINE
+    // -----------------------------------------------------------
+    function getProductById(pid) { return state.products.find((p) => p.id === pid); }
+    function getVariantById(vid) { return state.variants.find((v) => v.id === vid); }
+
+    function formatFullItemTitle(v) {
+      if (!v) return 'Unknown Item';
+      const p = getProductById(v.productId);
+      const name = p ? p.name : 'Item';
+      const attrs = [v.size ? `Size: ${v.size}` : '', v.color || ''].filter(Boolean);
+      return attrs.length ? `${name} (${attrs.join(', ')})` : name;
+    }
+
+    function getExpiryInfo(expiryDate) {
+      if (!expiryDate) {
+        return { status: 'na', label: 'No Expiry', badgeClass: 'bg-slate-100 text-slate-600 border-slate-200' };
+      }
+      const today = new Date(TODAY_ISO + 'T00:00:00');
+      const exp = new Date(expiryDate + 'T00:00:00');
+      const diffDays = Math.ceil((exp - today) / (1000 * 60 * 60 * 24));
+      if (diffDays < 0) {
+        return { status: 'expired', label: `Expired (${Math.abs(diffDays)}d ago)`, badgeClass: 'bg-rose-100 text-rose-800 border-rose-200' };
+      }
+      if (diffDays <= 30) {
+        return { status: 'near', label: `Expiring in ${diffDays}d`, badgeClass: 'bg-amber-100 text-amber-800 border-amber-200' };
+      }
+      return { status: 'valid', label: 'Valid Batch', badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-200' };
+    }
+
+    function getSellableBatchesForVariant(vid) {
+      return state.stockBatches
+        .filter((b) => b.variantId === vid && b.qtyAvailable > 0 && getExpiryInfo(b.expiryDate).status !== 'expired')
+        .sort((a, b) => {
+          if (!a.expiryDate && !b.expiryDate) return 0;
+          if (!a.expiryDate) return 1;
+          if (!b.expiryDate) return -1;
+          return a.expiryDate.localeCompare(b.expiryDate);
+        });
+    }
+
+    function getVariantSellableStock(vid) {
+      return getSellableBatchesForVariant(vid).reduce((sum, b) => sum + b.qtyAvailable, 0);
+    }
+
+    function getActiveBatchForVariant(vid) {
+      const batches = getSellableBatchesForVariant(vid);
+      return batches.length ? batches[0] : null;
+    }
+
+    function deductStockFefo(vid, qtyNeeded) {
+      let remaining = qtyNeeded;
+      const batches = getSellableBatchesForVariant(vid);
+      for (const b of batches) {
+        if (remaining <= 0) break;
+        const take = Math.min(b.qtyAvailable, remaining);
+        b.qtyAvailable -= take;
+        remaining -= take;
+      }
+    }
+
+    function restoreStockToBatch(vid, qtyToRestore) {
+      const batches = getSellableBatchesForVariant(vid);
+      if (batches.length) {
+        batches[0].qtyAvailable += qtyToRestore;
+      } else {
+        state.stockBatches.unshift({
+          id: `SB-RET-${Date.now()}`,
+          variantId: vid,
+          batchNo: 'RET-RESTOCK',
+          expiryDate: '',
+          qtyAvailable: qtyToRestore,
+          supplier: 'Counter Return',
+          receivedDate: TODAY_ISO
+        });
+      }
+    }
+
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const colors = {
+        success: 'bg-emerald-800 text-white border-emerald-700',
+        error: 'bg-rose-800 text-white border-rose-700',
+        warning: 'bg-amber-700 text-white border-amber-600',
+        info: 'bg-slate-800 text-white border-slate-700'
+      };
+      const el = document.createElement('div');
+      el.className = `pointer-events-auto px-4 py-3 rounded-xl shadow-lg border text-xs font-semibold flex items-center justify-between gap-3 transition-all ${colors[type] || colors.info}`;
+      el.innerHTML = `<span>${msg}</span><button type="button" onclick="this.parentElement.remove()" class="opacity-75 hover:opacity-100">&times;</button>`;
+      container.appendChild(el);
+      setTimeout(() => { if (el.parentElement) el.remove(); }, 3800);
+    }
+
+    // -----------------------------------------------------------
+    // NAVIGATION & GLOBAL BADGES
+    // -----------------------------------------------------------
+    function toggleSidebar() {
+      const sb = document.getElementById('sidebar');
+      const bd = document.getElementById('sidebarBackdrop');
+      sb.classList.toggle('-translate-x-full');
+      bd.classList.toggle('hidden');
+    }
+
+    function switchTab(tabKey) {
+      document.querySelectorAll('.tab-view').forEach((sec) => sec.classList.add('hidden'));
+      const target = document.getElementById(`tab-${tabKey}`);
+      if (target) target.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-btn').forEach((btn) => {
+        btn.className = 'nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 text-left cursor-pointer';
+      });
+      const activeNav = document.getElementById(`nav-${tabKey}`);
+      if (activeNav) {
+        activeNav.className = 'nav-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold bg-mitra-navy text-white shadow-xs text-left cursor-pointer';
+      }
+
+      const titles = {
+        pos: 'Counter Billing (POS)',
+        held: 'Hold / Parked Bills',
+        exchange: 'Return / Exchange / Cancel',
+        catalog: 'Catalog & Class Kits',
+        suppliers: 'Suppliers / Vendors Master',
+        inward: 'Stock Inward (GRN)',
+        stockExpiry: 'Stock & Expiry Tracker',
+        salesReport: 'Sales & Issued Report',
+        dueReport: 'Outstanding & Dues Report',
+        returnReport: 'Return & Exchange Audit Log',
+        zReport: 'Day-End Cash Register (Z-Report)'
+      };
+      document.getElementById('breadcrumbCurrent').textContent = titles[tabKey] || 'School Shop';
+
+      if (tabKey === 'held') renderHeldBillsView();
+      if (tabKey === 'exchange') renderTransactionsTable();
+      if (tabKey === 'catalog') renderCatalogView();
+      if (tabKey === 'suppliers') renderSuppliersView();
+      if (tabKey === 'inward') renderInwardView();
+      if (tabKey === 'stockExpiry') renderStockExpiryView();
+      if (tabKey === 'salesReport') renderSalesReport();
+      if (tabKey === 'dueReport') renderDueReport();
+      if (tabKey === 'returnReport') renderReturnReport();
+      if (tabKey === 'zReport') renderZReport();
+
+      const sb = document.getElementById('sidebar');
+      if (!sb.classList.contains('-translate-x-full') && window.innerWidth < 1024) {
+        toggleSidebar();
+      }
+    }
+
+    function updateGlobalBadges() {
+      document.getElementById('sidebarHeldBadge').textContent = state.heldBills.length;
+      document.getElementById('sidebarSupplierBadge').textContent = state.suppliers.filter((s) => s.status === 'Active').length;
+      document.getElementById('nextReceiptPreview').textContent = state.receiptCounter;
+
+      const dueCount = state.transactions.filter((t) => t.due > 0 && t.status !== 'Cancelled').length;
+      document.getElementById('sidebarDueBadge').textContent = dueCount;
+
+      let expCount = 0, nearCount = 0;
+      state.stockBatches.forEach((b) => {
+        if (b.qtyAvailable <= 0) return;
+        const st = getExpiryInfo(b.expiryDate).status;
+        if (st === 'expired') expCount++;
+        if (st === 'near') nearCount++;
+      });
+      const alertTotal = expCount + nearCount;
+      document.getElementById('sidebarExpiryBadge').textContent = alertTotal;
+      document.getElementById('topExpiryAlertText').textContent = `${alertTotal} Batch Alerts (${expCount} Expired, ${nearCount} Expiring <30d)`;
+
+      const todayPaid = state.transactions
+        .filter((t) => t.issueDate === TODAY_ISO && t.status !== 'Cancelled')
+        .reduce((s, t) => s + (t.paid || 0), 0);
+      document.getElementById('todaysCollectionBadge').textContent = `₹${todayPaid.toLocaleString('en-IN')}`;
+    }
+
+    function applyDatePreset(prefix, preset) {
+      const fromEl = document.getElementById(`${prefix}FromDate`);
+      const toEl = document.getElementById(`${prefix}ToDate`);
+      if (!fromEl || !toEl) return;
+
+      if (preset === 'clear') {
+        fromEl.value = '';
+        toEl.value = '';
+      } else if (preset === 'today') {
+        fromEl.value = TODAY_ISO;
+        toEl.value = TODAY_ISO;
+      } else if (preset === '7days') {
+        fromEl.value = '2026-11-11';
+        toEl.value = TODAY_ISO;
+      } else if (preset === 'month') {
+        fromEl.value = '2026-11-01';
+        toEl.value = '2026-11-30';
+      } else if (preset === 'session') {
+        fromEl.value = '2026-04-01';
+        toEl.value = '2027-03-31';
+      }
+
+      if (prefix === 'exchange') renderTransactionsTable();
+      if (prefix === 'stock') renderStockExpiryView();
+      if (prefix === 'sales') renderSalesReport();
+      if (prefix === 'dues') renderDueReport();
+      if (prefix === 'returns') renderReturnReport();
+      if (prefix === 'z') renderZReport();
+    }
+
+    // -----------------------------------------------------------
+    // TAB 1: COUNTER BILLING (POS) LOGIC
+    // -----------------------------------------------------------
+    function setCustomerMode(mode) {
+      state.customerMode = mode;
+      const stBtn = document.getElementById('modeStudentBtn');
+      const wkBtn = document.getElementById('modeWalkinBtn');
+      const lookupSec = document.getElementById('studentLookupSection');
+      const kitBanner = document.getElementById('classKitBanner');
+
+      if (mode === 'student') {
+        stBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-mitra-navy shadow-xs cursor-pointer';
+        wkBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 cursor-pointer';
+        lookupSec.classList.remove('hidden');
+      } else {
+        wkBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-mitra-navy shadow-xs cursor-pointer';
+        stBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 cursor-pointer';
+        lookupSec.classList.add('hidden');
+        kitBanner.classList.add('hidden');
+        state.selectedStudent = null;
+        document.getElementById('posCustomerName').value = 'Walk-in Parent / Staff';
+        document.getElementById('posAdmClass').value = 'WALK-IN';
+        document.getElementById('posFatherName').value = '';
+        document.getElementById('posContact').value = '';
+      }
+    }
+
+    function handleStudentSearch(query) {
+      const dd = document.getElementById('studentDropdown');
+      const q = (query || '').trim().toLowerCase();
+      const matches = state.students.filter((s) =>
+        s.admNo.toLowerCase().includes(q) ||
+        s.rfid.toLowerCase().includes(q) ||
+        s.name.toLowerCase().includes(q) ||
+        s.mobile.includes(q)
+      );
+      if (!matches.length) {
+        dd.classList.add('hidden');
+        return;
+      }
+      dd.innerHTML = matches.map((s) => `
+        <button type="button" onclick="selectStudent('${s.admNo}')" class="w-full px-3.5 py-2.5 text-left hover:bg-blue-50 flex items-center justify-between text-xs cursor-pointer">
+          <div>
+            <span class="font-bold text-mitra-navy">${s.name}</span>
+            <span class="text-slate-500 ml-1">(${s.admNo} • ${s.section})</span>
+          </div>
+          <span class="font-mono text-[11px] text-slate-500">${s.mobile}</span>
+        </button>
+      `).join('');
+      dd.classList.remove('hidden');
+    }
+
+    document.addEventListener('click', (e) => {
+      const dd = document.getElementById('studentDropdown');
+      const inp = document.getElementById('studentSearchInput');
+      if (dd && inp && !dd.contains(e.target) && e.target !== inp) {
+        dd.classList.add('hidden');
+      }
+    });
+
+    function selectStudent(admNo) {
+      const st = state.students.find((s) => s.admNo === admNo);
+      if (!st) return;
+      state.selectedStudent = st;
+      document.getElementById('studentSearchInput').value = `${st.admNo} — ${st.name} (${st.section})`;
+      document.getElementById('studentDropdown').classList.add('hidden');
+      document.getElementById('posCustomerName').value = st.name;
+      document.getElementById('posAdmClass').value = `${st.admNo} (${st.section})`;
+      document.getElementById('posFatherName').value = st.fatherName;
+      document.getElementById('posContact').value = st.mobile;
+
+      const kit = state.classKits[st.className];
+      const banner = document.getElementById('classKitBanner');
+      if (kit && kit.length) {
+        const kitTotal = kit.reduce((sum, vid) => sum + (getVariantById(vid)?.sellPrice || 0), 0);
+        document.getElementById('kitBannerTitle').textContent = `${st.className} Complete Book & Uniform Kit Available (${kit.length} Items)`;
+        document.getElementById('kitBannerDesc').textContent = `Includes ${kit.map((vid) => getProductById(getVariantById(vid)?.productId)?.name).join(', ')} • Total MRP: ₹${kitTotal}`;
+        banner.classList.remove('hidden');
+      } else {
+        banner.classList.add('hidden');
+      }
+    }
+
+    function loadSelectedStudentKit() {
+      if (!state.selectedStudent) return;
+      const kit = state.classKits[state.selectedStudent.className] || [];
+      if (!kit.length) return;
+      state.cart = [];
+      kit.forEach((vid) => addVariantToCart(vid, 1, true));
+      renderCart();
+      showToast(`Loaded ${state.selectedStudent.className} Kit (${kit.length} items) into cart!`, 'success');
+    }
+
+    function setPosShelfFilter(cat) {
+      state.posShelfFilter = cat;
+      document.querySelectorAll('.shelf-cat-btn').forEach((btn) => {
+        btn.className = 'shelf-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 cursor-pointer';
+      });
+      const active = Array.from(document.querySelectorAll('.shelf-cat-btn')).find((b) => b.textContent.trim().toUpperCase() === cat);
+      if (active) active.className = 'shelf-cat-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-mitra-navy text-white cursor-pointer';
+      renderPosQuickShelf();
+    }
+
+    function renderPosQuickShelf() {
+      const grid = document.getElementById('posQuickShelfGrid');
+      const filtered = state.variants.filter((v) => {
+        const p = getProductById(v.productId);
+        return state.posShelfFilter === 'ALL' || (p && p.category === state.posShelfFilter);
+      }).slice(0, 8);
+
+      grid.innerHTML = filtered.map((v) => {
+        const p = getProductById(v.productId);
+        const stock = getVariantSellableStock(v.id);
+        return `
+          <button type="button" onclick="addVariantToCart('${v.id}', 1)" class="p-3 rounded-xl border border-slate-200 hover:border-mitra-navy bg-slate-50/70 hover:bg-blue-50/40 text-left transition flex flex-col justify-between gap-1.5 cursor-pointer">
+            <div class="flex items-center justify-between gap-1">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600">${p ? p.category : ''}</span>
+              <span class="text-[10px] font-bold ${stock > 10 ? 'text-emerald-700' : 'text-amber-700'}">Stock: ${stock}</span>
+            </div>
+            <p class="text-xs font-bold text-slate-800 line-clamp-2">${formatFullItemTitle(v)}</p>
+            <div class="flex items-center justify-between pt-1 border-t border-slate-200/70">
+              <span class="font-mono text-[10px] text-slate-500">${v.sku}</span>
+              <span class="text-xs font-extrabold text-mitra-navy">₹${v.sellPrice}</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function scanBarcode() {
+      const inp = document.getElementById('barcodeInput');
+      const code = (inp.value || '').trim().toUpperCase();
+      if (!code) return;
+      const v = state.variants.find((item) => item.sku.toUpperCase() === code);
+      if (!v) {
+        showToast(`SKU "${code}" not found in catalog.`, 'error');
+        return;
+      }
+      addVariantToCart(v.id, 1);
+      inp.value = '';
+    }
+
+    function addVariantToCart(vid, qty = 1, silent = false) {
+      const v = getVariantById(vid);
+      if (!v) return;
+      const stock = getVariantSellableStock(vid);
+      if (stock <= 0) {
+        if (!silent) showToast(`"${formatFullItemTitle(v)}" has 0 sellable stock (or batch expired).`, 'error');
+        return;
+      }
+      const existing = state.cart.find((c) => c.variantId === vid);
+      if (existing) {
+        if (existing.qty + qty > stock) {
+          if (!silent) showToast(`Only ${stock} sellable units available.`, 'warning');
+          return;
+        }
+        existing.qty += qty;
+      } else {
+        const p = getProductById(v.productId);
+        state.cart.push({
+          rowId: `ROW-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+          category: p ? p.category : 'DRESS',
+          productId: v.productId,
+          variantId: vid,
+          qty,
+          concession: 0
+        });
+      }
+      if (!silent) {
+        renderCart();
+        showToast(`Added ${formatFullItemTitle(v)}`, 'info');
+      }
+    }
+
+    function addCartRow() {
+      const defaultVar = state.variants[0];
+      if (!defaultVar) return;
+      const p = getProductById(defaultVar.productId);
+      state.cart.push({
+        rowId: `ROW-${Date.now()}`,
+        category: p ? p.category : 'DRESS',
+        productId: defaultVar.productId,
+        variantId: defaultVar.id,
+        qty: 1,
+        concession: 0
+      });
+      renderCart();
+    }
+
+    function updateCartRow(idx, field, value) {
+      const row = state.cart[idx];
+      if (!row) return;
+      if (field === 'category') {
+        row.category = value;
+        const firstProd = state.products.find((p) => p.category === value) || state.products[0];
+        row.productId = firstProd.id;
+        const firstVar = state.variants.find((v) => v.productId === firstProd.id) || state.variants[0];
+        row.variantId = firstVar.id;
+      } else if (field === 'productId') {
+        row.productId = value;
+        const firstVar = state.variants.find((v) => v.productId === value) || state.variants[0];
+        row.variantId = firstVar.id;
+      } else if (field === 'variantId') {
+        row.variantId = value;
+      } else if (field === 'qty') {
+        const maxStock = getVariantSellableStock(row.variantId);
+        row.qty = Math.max(1, Math.min(maxStock || 1, parseInt(value, 10) || 1));
+      } else if (field === 'concession') {
+        row.concession = Math.max(0, parseFloat(value) || 0);
+      }
+      renderCart();
+    }
+
+    function removeCartRow(idx) {
+      state.cart.splice(idx, 1);
+      renderCart();
+    }
+
+    function renderCart() {
+      const tbody = document.getElementById('posCartBody');
+      const emptyHint = document.getElementById('emptyCartHint');
+
+      if (!state.cart.length) {
+        tbody.innerHTML = '';
+        emptyHint.classList.remove('hidden');
+        recalculateTotals(false);
+        return;
+      }
+      emptyHint.classList.add('hidden');
+
+      tbody.innerHTML = state.cart.map((row, idx) => {
+        const v = getVariantById(row.variantId);
+        const p = getProductById(row.productId);
+        const stock = getVariantSellableStock(row.variantId);
+        const batch = getActiveBatchForVariant(row.variantId);
+        const rate = v ? v.sellPrice : 0;
+        const gst = p ? p.gst : 0;
+        const lineTotal = Math.max(0, rate * row.qty - row.concession);
+
+        const prodsInCat = state.products.filter((prod) => prod.category === row.category);
+        const varsInProd = state.variants.filter((vr) => vr.productId === row.productId);
+
+        return `
+          <tr class="hover:bg-slate-50">
+            <td class="py-2.5 px-2.5 text-center font-bold text-slate-500">${idx + 1}</td>
+            <td class="py-2.5 px-2.5">
+              <select onchange="updateCartRow(${idx}, 'category', this.value)" class="px-2 py-1.5 text-xs font-semibold border border-slate-300 rounded-lg bg-white">
+                ${state.categories.map((c) => `<option value="${c}" ${c === row.category ? 'selected' : ''}>${c}</option>`).join('')}
+              </select>
+            </td>
+            <td class="py-2.5 px-2.5">
+              <select onchange="updateCartRow(${idx}, 'productId', this.value)" class="px-2 py-1.5 text-xs font-semibold border border-slate-300 rounded-lg bg-white max-w-[165px]">
+                ${prodsInCat.map((pr) => `<option value="${pr.id}" ${pr.id === row.productId ? 'selected' : ''}>${pr.name}</option>`).join('')}
+              </select>
+            </td>
+            <td class="py-2.5 px-2.5">
+              <select onchange="updateCartRow(${idx}, 'variantId', this.value)" class="px-2 py-1.5 text-xs font-semibold border border-slate-300 rounded-lg bg-white max-w-[165px]">
+                ${varsInProd.map((vr) => `<option value="${vr.id}" ${vr.id === row.variantId ? 'selected' : ''}>${[vr.size, vr.color].filter(Boolean).join(' • ') || vr.sku}</option>`).join('')}
+              </select>
+            </td>
+            <td class="py-2.5 px-2.5 text-center text-[11px] font-mono">
+              ${batch ? `<span class="font-bold text-slate-700 block">${batch.batchNo}</span><span class="text-slate-500">${batch.expiryDate ? formatIsoToDisplay(batch.expiryDate) : 'No Expiry'}</span>` : '<span class="text-rose-600 font-bold">Out of Stock</span>'}
+            </td>
+            <td class="py-2.5 px-2.5 text-center font-bold ${stock > 5 ? 'text-emerald-700' : 'text-rose-600'}">${stock}</td>
+            <td class="py-2.5 px-2.5 text-right font-semibold">₹${rate}</td>
+            <td class="py-2.5 px-2.5 text-center">
+              <input type="number" min="1" max="${stock || 1}" value="${row.qty}" onchange="updateCartRow(${idx}, 'qty', this.value)" class="w-14 px-1.5 py-1 text-center font-bold border border-slate-300 rounded-lg bg-white" />
+            </td>
+            <td class="py-2.5 px-2.5 text-center text-xs text-indigo-700 font-semibold">${gst}%</td>
+            <td class="py-2.5 px-2.5 text-right">
+              <input type="number" min="0" value="${row.concession}" oninput="updateCartRow(${idx}, 'concession', this.value)" class="w-16 px-1.5 py-1 text-right border border-slate-300 rounded-lg bg-white" />
+            </td>
+            <td class="py-2.5 px-2.5 text-right font-extrabold text-slate-900">₹${lineTotal}</td>
+            <td class="py-2.5 px-2.5 text-center">
+              <button type="button" onclick="removeCartRow(${idx})" class="text-rose-600 hover:text-rose-800 p-1 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      recalculateTotals(false);
+    }
+
+    function recalculateTotals(manualPaidEdit) {
+      let gross = 0, gstTotal = 0, itemConc = 0;
+      state.cart.forEach((row) => {
+        const v = getVariantById(row.variantId);
+        const p = getProductById(row.productId);
+        const lineGross = (v ? v.sellPrice : 0) * row.qty;
+        gross += lineGross;
+        itemConc += row.concession || 0;
+        const gstRate = p ? p.gst : 0;
+        gstTotal += lineGross - lineGross / (1 + gstRate / 100);
+      });
+
+      const billDisc = parseFloat(document.getElementById('posBillDiscount')?.value) || 0;
+      const totalConc = itemConc + billDisc;
+      const net = Math.max(0, Math.round(gross - totalConc));
+      const mode = document.getElementById('posPaymentMode')?.value || 'Cash';
+
+      const paidInput = document.getElementById('posPaidInput');
+      if (!manualPaidEdit) {
+        if (mode === 'Fee Ledger Due') {
+          paidInput.value = 0;
+        } else if (mode === 'Split (Cash + UPI)') {
+          const c = parseFloat(document.getElementById('splitCashInput')?.value) || 0;
+          const u = parseFloat(document.getElementById('splitUpiInput')?.value) || 0;
+          paidInput.value = c + u;
+        } else {
+          paidInput.value = net;
+        }
+      }
+
+      const paid = Math.max(0, parseFloat(paidInput.value) || 0);
+      const due = Math.max(0, net - paid);
+
+      document.getElementById('summarySubTotal').textContent = `₹${Math.round(gross - gstTotal).toLocaleString('en-IN')}`;
+      document.getElementById('summaryTotalGst').textContent = `₹${Math.round(gstTotal).toLocaleString('en-IN')}`;
+      document.getElementById('summaryTotalConcession').textContent = `₹${totalConc.toLocaleString('en-IN')}`;
+      document.getElementById('summaryNetPayable').textContent = `₹${net.toLocaleString('en-IN')}`;
+      document.getElementById('summaryDueAmount').textContent = `₹${due.toLocaleString('en-IN')}`;
+    }
+
+    function handlePaymentModeChange() {
+      const mode = document.getElementById('posPaymentMode').value;
+      const splitBox = document.getElementById('splitPaymentBox');
+      if (mode === 'Split (Cash + UPI)') {
+        splitBox.classList.remove('hidden');
+        const net = parseInt(document.getElementById('summaryNetPayable').textContent.replace(/[^\d]/g, ''), 10) || 0;
+        const half = Math.floor(net / 2);
+        document.getElementById('splitCashInput').value = half;
+        document.getElementById('splitUpiInput').value = net - half;
+      } else {
+        splitBox.classList.add('hidden');
+      }
+      recalculateTotals(false);
+    }
+
+    function syncSplitPayment() {
+      const c = parseFloat(document.getElementById('splitCashInput').value) || 0;
+      const u = parseFloat(document.getElementById('splitUpiInput').value) || 0;
+      document.getElementById('posPaidInput').value = c + u;
+      recalculateTotals(true);
+    }
+
+    function holdCurrentCart() {
+      if (!state.cart.length) {
+        showToast('Cart is empty; nothing to park.', 'warning');
+        return;
+      }
+      state.heldBills.unshift({
+        id: `HOLD-${Date.now().toString().slice(-3)}`,
+        heldAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        customerName: document.getElementById('posCustomerName').value.trim() || 'Walk-in Parent',
+        admClass: document.getElementById('posAdmClass').value.trim() || 'WALK-IN',
+        fatherName: document.getElementById('posFatherName').value.trim(),
+        contact: document.getElementById('posContact').value.trim(),
+        note: document.getElementById('posRemark').value.trim() || 'Parked at counter',
+        items: state.cart.map((c) => ({ variantId: c.variantId, qty: c.qty, concession: c.concession }))
+      });
+      state.cart = [];
+      renderCart();
+      updateGlobalBadges();
+      showToast('Bill parked into Hold / Parked Bills!', 'info');
+    }
+
+    function renderHeldBillsView() {
+      const grid = document.getElementById('heldBillsGrid');
+      if (!state.heldBills.length) {
+        grid.innerHTML = `<div class="col-span-full py-10 text-center text-xs text-slate-500 bg-slate-50 rounded-xl border border-dashed border-slate-300">No parked bills at the moment.</div>`;
+        return;
+      }
+      grid.innerHTML = state.heldBills.map((h, idx) => {
+        const estTotal = h.items.reduce((s, it) => s + Math.max(0, (getVariantById(it.variantId)?.sellPrice || 0) * it.qty - (it.concession || 0)), 0);
+        return `
+          <div class="p-4 rounded-2xl border border-amber-200 bg-amber-50/40 space-y-3 flex flex-col justify-between">
+            <div class="space-y-1">
+              <div class="flex justify-between items-center">
+                <span class="font-mono text-xs font-bold text-amber-800">${h.id} • ${h.heldAt}</span>
+                <span class="font-extrabold text-sm text-mitra-navy">₹${estTotal}</span>
+              </div>
+              <p class="font-bold text-slate-800 text-sm">${h.customerName}</p>
+              <p class="text-xs text-slate-500">${h.admClass} • ${h.items.length} Item(s)</p>
+              <p class="text-[11px] text-slate-600 italic">"${h.note}"</p>
+            </div>
+            <div class="flex gap-2 pt-2 border-t border-amber-200/70">
+              <button type="button" onclick="resumeHeldBill(${idx})" class="flex-1 py-2 rounded-xl bg-mitra-navy text-white text-xs font-bold cursor-pointer">Resume in POS</button>
+              <button type="button" onclick="discardHeldBill(${idx})" class="px-3 py-2 rounded-xl bg-white border border-slate-300 text-rose-700 text-xs font-bold cursor-pointer">Discard</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function resumeHeldBill(idx) {
+      const h = state.heldBills[idx];
+      if (!h) return;
+      state.heldBills.splice(idx, 1);
+      document.getElementById('posCustomerName').value = h.customerName;
+      document.getElementById('posAdmClass').value = h.admClass;
+      document.getElementById('posFatherName').value = h.fatherName || '';
+      document.getElementById('posContact').value = h.contact || '';
+      state.cart = [];
+      h.items.forEach((it) => {
+        const v = getVariantById(it.variantId);
+        const p = v ? getProductById(v.productId) : null;
+        if (v) {
+          state.cart.push({
+            rowId: `ROW-${Date.now()}-${Math.random().toString(36).slice(2, 5)}`,
+            category: p ? p.category : 'DRESS',
+            productId: v.productId,
+            variantId: v.id,
+            qty: it.qty,
+            concession: it.concession || 0
+          });
+        }
+      });
+      updateGlobalBadges();
+      switchTab('pos');
+      renderCart();
+      showToast(`Resumed parked bill ${h.id}`, 'success');
+    }
+
+    function discardHeldBill(idx) {
+      state.heldBills.splice(idx, 1);
+      updateGlobalBadges();
+      renderHeldBillsView();
+      showToast('Parked bill discarded.', 'info');
+    }
+
+    function processCheckout() {
+      if (!state.cart.length) {
+        showToast('Please add at least one item before checkout.', 'error');
+        return;
+      }
+      const customerName = document.getElementById('posCustomerName').value.trim();
+      const contact = document.getElementById('posContact').value.trim();
+      if (!customerName || !contact) {
+        showToast('Customer Name and Contact Mobile are required.', 'error');
+        return;
+      }
+
+      for (const row of state.cart) {
+        const avail = getVariantSellableStock(row.variantId);
+        if (row.qty > avail) {
+          showToast(`Insufficient sellable stock for ${formatFullItemTitle(getVariantById(row.variantId))}.`, 'error');
+          return;
+        }
+      }
+
+      const receiptNo = `RCP-2026-${state.receiptCounter++}`;
+      const issueDateIso = document.getElementById('posIssueDate').value || TODAY_ISO;
+      const admClass = document.getElementById('posAdmClass').value.trim() || 'WALK-IN';
+      const fatherName = document.getElementById('posFatherName').value.trim();
+      const mode = document.getElementById('posPaymentMode').value;
+      const billDisc = parseFloat(document.getElementById('posBillDiscount').value) || 0;
+
+      let gross = 0, gst = 0, itemConc = 0;
+      const lines = state.cart.map((row) => {
+        const v = getVariantById(row.variantId);
+        const p = getProductById(row.productId);
+        const lg = v.sellPrice * row.qty;
+        const lNet = Math.max(0, lg - (row.concession || 0));
+        gross += lg;
+        itemConc += row.concession || 0;
+        gst += lg - lg / (1 + (p ? p.gst : 0) / 100);
+        return {
+          variantId: v.id,
+          category: row.category,
+          title: formatFullItemTitle(v),
+          qty: row.qty,
+          rate: v.sellPrice,
+          cost: v.costPrice,
+          concession: row.concession || 0,
+          amount: lNet
+        };
+      });
+
+      const totalConc = itemConc + billDisc;
+      const net = Math.max(0, Math.round(gross - totalConc));
+      const paid = Math.max(0, parseFloat(document.getElementById('posPaidInput').value) || 0);
+      const due = Math.max(0, net - paid);
+
+      let cashPaid = 0, upiPaid = 0, cardPaid = 0;
+      if (mode === 'Cash') cashPaid = paid;
+      else if (mode === 'UPI / QR') upiPaid = paid;
+      else if (mode === 'Card') cardPaid = paid;
+      else if (mode === 'Split (Cash + UPI)') {
+        cashPaid = parseFloat(document.getElementById('splitCashInput').value) || 0;
+        upiPaid = parseFloat(document.getElementById('splitUpiInput').value) || 0;
+      }
+
+      lines.forEach((l, i) => {
+        deductStockFefo(l.variantId, l.qty);
+        state.transactions.unshift({
+          id: `TXN-${Date.now()}-${i}`,
+          receiptNo,
+          issueDate: issueDateIso,
+          studentName: customerName,
+          admClass,
+          contact,
+          category: l.category,
+          variantId: l.variantId,
+          qty: l.qty,
+          unitPrice: l.rate,
+          costPrice: l.cost,
+          concession: l.concession,
+          total: l.amount,
+          paid: i === 0 ? paid : 0,
+          cashPaid: i === 0 ? cashPaid : 0,
+          upiPaid: i === 0 ? upiPaid : 0,
+          cardPaid: i === 0 ? cardPaid : 0,
+          due: i === 0 ? due : 0,
+          mode,
+          status: 'Issued'
+        });
+      });
+
       const topTxn = state.transactions[0];
       if (topTxn && topTxn.receiptNo === receiptNo) {
         topTxn.paid = paid; topTxn.cashPaid = cashPaid; topTxn.upiPaid = upiPaid; topTxn.cardPaid = cardPaid; topTxn.due = due;
@@ -1362,6 +2469,9 @@
       }
     }
 
+    // -----------------------------------------------------------
+    // RECEIPT & THERMAL PRINTER ENGINE
+    // -----------------------------------------------------------
     function openReceiptWithData(data) {
       state.lastReceiptData = data;
       document.getElementById('rcptNo').textContent = data.receiptNo;
@@ -1529,11 +2639,11 @@
     }
 
     async function connectThermalSerialPrinter() {
-      if (!('serial' in navigator)) {
-        showToast('Web Serial not supported in this browser; using Thermal Driver Print.', 'info');
-        return;
-      }
       try {
+        if (typeof navigator === 'undefined' || !('serial' in navigator)) {
+          showToast('Web Serial not available in this window; using Thermal Driver Print.', 'info');
+          return;
+        }
         const port = await navigator.serial.requestPort();
         await port.open({ baudRate: 9600 });
         state.serialPort = port;
@@ -1541,7 +2651,7 @@
         document.getElementById('modalPrinterBtnLabel').textContent = 'USB ESC/POS Ready';
         showToast('USB/Serial ESC/POS Thermal Printer connected!', 'success');
       } catch (err) {
-        showToast('Printer selection cancelled or unavailable.', 'warning');
+        showToast('Printer pairing cancelled or blocked by browser permissions.', 'warning');
       }
     }
 
@@ -1561,13 +2671,13 @@
         const lineDiv = '-'.repeat(width) + '\n';
 
         let escText = '';
-        escText += ESC + '@'; // Initialize printer
-        escText += ESC + 'a\x01'; // Center align
+        escText += ESC + '@';
+        escText += ESC + 'a\x01';
         escText += ESC + 'E\x01' + 'MIRZA ANWAR BAIG INTER COLLEGE\n' + ESC + 'E\x00';
         escText += 'SCHOOL SHOP - KUAMR STORE\n';
         escText += 'Session: 2026-27\n';
         escText += lineDiv;
-        escText += ESC + 'a\x00'; // Left align
+        escText += ESC + 'a\x00';
         escText += `Bill: ${data.receiptNo}  Date: ${formatIsoToDisplay(data.issueDateIso)}\n`;
         escText += `Student: ${data.customerName}\n`;
         escText += `Class: ${data.admClass}  Mode: ${data.mode}\n`;
@@ -1586,7 +2696,7 @@
         escText += `BALANCE DUE : Rs.${data.due}\n`;
         escText += lineDiv;
         escText += ESC + 'a\x01' + 'Thank You! Visit Again\n\n\n';
-        escText += GS + 'V\x42\x00'; // Feed & Partial Auto-Cut
+        escText += GS + 'V\x42\x00';
 
         const writer = state.serialPort.writable.getWriter();
         await writer.write(encoder.encode(escText));
@@ -1598,10 +2708,19 @@
       }
     }
 
-    function closeReceiptModal() { document.getElementById('receiptModal').classList.add('hidden'); document.getElementById('receiptModal').classList.remove('flex'); }
-    function triggerReceiptPrint() { document.body.className = 'bg-slate-100 text-slate-800 font-sans antialiased print-receipt'; window.print(); }
+    function closeReceiptModal() {
+      document.getElementById('receiptModal').classList.add('hidden');
+      document.getElementById('receiptModal').classList.remove('flex');
+    }
 
-    // Return & Exchange
+    function triggerReceiptPrint() {
+      document.body.className = 'bg-slate-100 text-slate-800 font-sans antialiased print-receipt';
+      window.print();
+    }
+
+    // -----------------------------------------------------------
+    // RETURN & EXCHANGE
+    // -----------------------------------------------------------
     function renderTransactionsTable() {
       const q = (document.getElementById('exchangeSearchInput')?.value || '').trim().toLowerCase();
       const fromIso = document.getElementById('exchangeFromDate')?.value || '';
@@ -1619,10 +2738,10 @@
           <td class="py-3 px-3 text-right font-bold">₹${t.total}</td>
           <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full text-[11px] font-bold ${t.status === 'Cancelled' ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-700'}">${t.status}</span></td>
           <td class="py-3 px-3 text-center">
-            <button onclick="reprintSavedReceipt('${t.receiptNo}')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 text-xs font-bold mr-1 cursor-pointer" title="Print 80mm/58mm Thermal Receipt"><i class="fa-solid fa-print"></i></button>
+            <button type="button" onclick="reprintSavedReceipt('${t.receiptNo}')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 text-xs font-bold mr-1 cursor-pointer" title="Print 80mm/58mm Thermal Receipt"><i class="fa-solid fa-print"></i></button>
             ${t.status === 'Cancelled' ? '' : `
-              <button onclick="openSizeSwapModal('${t.id}')" class="px-2.5 py-1 rounded-lg bg-blue-50 text-mitra-navy border border-blue-200 text-xs font-bold mr-1 cursor-pointer">Size Swap</button>
-              <button onclick="cancelTransaction('${t.id}')" class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold cursor-pointer">Return</button>
+              <button type="button" onclick="openSizeSwapModal('${t.id}')" class="px-2.5 py-1 rounded-lg bg-blue-50 text-mitra-navy border border-blue-200 text-xs font-bold mr-1 cursor-pointer">Size Swap</button>
+              <button type="button" onclick="cancelTransaction('${t.id}')" class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold cursor-pointer">Return</button>
             `}
           </td>
         </tr>
@@ -1642,7 +2761,12 @@
       document.getElementById('swapTargetVariant').innerHTML = sibs.map((v) => `<option value="${v.id}">${formatFullItemTitle(v)} (Stock: ${getVariantSellableStock(v.id)})</option>`).join('');
       const m = document.getElementById('sizeSwapModal'); m.classList.remove('hidden'); m.classList.add('flex');
     }
-    function closeSizeSwapModal() { const m = document.getElementById('sizeSwapModal'); m.classList.add('hidden'); m.classList.remove('flex'); }
+
+    function closeSizeSwapModal() {
+      const m = document.getElementById('sizeSwapModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
 
     function confirmSizeSwap() {
       const txn = state.transactions.find((t) => t.id === state.swapTransactionId);
@@ -1682,7 +2806,9 @@
       showToast(`Receipt ${txn.receiptNo} returned & stock restored.`, 'info');
     }
 
-    // Catalog Sub-tabs & Builders
+    // -----------------------------------------------------------
+    // CATALOG SUB-TABS & BUILDERS
+    // -----------------------------------------------------------
     function switchCatalogSubTab(key) {
       document.querySelectorAll('.cat-sub-view').forEach((el) => el.classList.add('hidden'));
       document.getElementById(`catSub-${key}`)?.classList.remove('hidden');
@@ -1724,7 +2850,7 @@
               <span class="font-extrabold text-sm text-emerald-700">₹${total}</span>
             </div>
             <div class="flex flex-wrap gap-1.5">
-              ${vids.map((id, i) => `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs">${formatFullItemTitle(getVariantById(id))}<button onclick="removeItemFromClassKit('${cls}',${i})" class="text-rose-600 font-bold cursor-pointer">&times;</button></span>`).join('')}
+              ${vids.map((id, i) => `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs">${formatFullItemTitle(getVariantById(id))}<button type="button" onclick="removeItemFromClassKit('${cls}',${i})" class="text-rose-600 font-bold cursor-pointer">&times;</button></span>`).join('')}
             </div>
           </div>
         `;
@@ -1737,6 +2863,7 @@
       const val = inp.value.trim().toUpperCase();
       if (val && !state.categories.includes(val)) { state.categories.push(val); inp.value = ''; renderCatalogView(); showToast(`Category "${val}" added!`, 'success'); }
     }
+
     function handleAddProduct(e) {
       e.preventDefault();
       state.products.push({
@@ -1750,6 +2877,7 @@
       renderCatalogView();
       showToast('Product saved!', 'success');
     }
+
     function handleAddVariant(e) {
       e.preventDefault();
       const vid = `V${Date.now()}`;
@@ -1775,13 +2903,18 @@
       renderCatalogView();
       showToast(`Variant ${sku} added (20 opening units).`, 'success');
     }
+
     function addItemToClassKit() {
       const cls = document.getElementById('kitTargetClass').value;
       const vid = document.getElementById('kitVariantSelect').value;
       if (!state.classKits[cls]) state.classKits[cls] = [];
       if (!state.classKits[cls].includes(vid)) { state.classKits[cls].push(vid); renderCatalogView(); showToast(`Added to ${cls} Kit.`, 'success'); }
     }
-    function removeItemFromClassKit(cls, idx) { state.classKits[cls].splice(idx, 1); renderCatalogView(); }
+
+    function removeItemFromClassKit(cls, idx) {
+      state.classKits[cls].splice(idx, 1);
+      renderCatalogView();
+    }
 
     // -----------------------------------------------------------
     // SUPPLIERS / VENDORS MASTER LOGIC
@@ -1949,7 +3082,9 @@
       showToast(`Settled ₹${payable.toLocaleString('en-IN')} payable to ${s.firmName}!`, 'success');
     }
 
-    // Stock Inward (GRN)
+    // -----------------------------------------------------------
+    // STOCK INWARD (GRN)
+    // -----------------------------------------------------------
     function renderInwardView() {
       const activeSups = state.suppliers.filter((s) => s.status === 'Active');
       document.getElementById('grnSupplier').innerHTML = activeSups.map((s) => `<option value="${s.firmName}">${s.firmName} (${s.category})</option>`).join('');
@@ -2023,10 +3158,21 @@
       }).join('');
       const m = document.getElementById('barcodeModal'); m.classList.remove('hidden'); m.classList.add('flex');
     }
-    function closeBarcodeModal() { const m = document.getElementById('barcodeModal'); m.classList.add('hidden'); m.classList.remove('flex'); }
-    function triggerBarcodePrint() { document.body.className = 'bg-slate-100 text-slate-800 font-sans antialiased print-barcode'; window.print(); }
 
-    // Stock & Expiry Tracker
+    function closeBarcodeModal() {
+      const m = document.getElementById('barcodeModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function triggerBarcodePrint() {
+      document.body.className = 'bg-slate-100 text-slate-800 font-sans antialiased print-barcode';
+      window.print();
+    }
+
+    // -----------------------------------------------------------
+    // STOCK & EXPIRY TRACKER
+    // -----------------------------------------------------------
     function renderStockExpiryView() {
       let expUnits = 0, nearUnits = 0, lowItems = 0, val = 0;
       state.stockBatches.forEach((b) => {
@@ -2077,8 +3223,8 @@
             <td class="py-3 px-3 text-right font-semibold">₹${(b.qtyAvailable * v.sellPrice).toLocaleString('en-IN')}</td>
             <td class="py-3 px-3 text-center">
               ${exp.status === 'expired' && b.qtyAvailable > 0
-                ? `<button onclick="writeOffExpiredBatch('${b.id}')" class="px-2.5 py-1 rounded-lg bg-rose-700 text-white text-xs font-bold cursor-pointer">Write-Off</button>`
-                : `<button onclick="switchTab('inward')" class="px-2.5 py-1 rounded-lg bg-blue-50 text-mitra-navy border border-blue-200 text-xs font-bold cursor-pointer">+ Restock</button>`}
+                ? `<button type="button" onclick="writeOffExpiredBatch('${b.id}')" class="px-2.5 py-1 rounded-lg bg-rose-700 text-white text-xs font-bold cursor-pointer">Write-Off</button>`
+                : `<button type="button" onclick="switchTab('inward')" class="px-2.5 py-1 rounded-lg bg-blue-50 text-mitra-navy border border-blue-200 text-xs font-bold cursor-pointer">+ Restock</button>`}
             </td>
           </tr>
         `;
@@ -2094,7 +3240,9 @@
       showToast('Expired batch written off.', 'warning');
     }
 
-    // Reports
+    // -----------------------------------------------------------
+    // REPORTS & AUDIT
+    // -----------------------------------------------------------
     function renderSalesReport() {
       const cat = document.getElementById('srCategoryFilter')?.value || 'ALL';
       const mode = document.getElementById('srModeFilter')?.value || 'ALL';
@@ -2122,12 +3270,40 @@
           <td class="py-2.5 px-3 text-xs font-semibold">${t.mode}</td>
           <td class="py-2.5 px-3 text-right font-bold">₹${t.total}</td>
           <td class="py-2.5 px-3 text-center">
-            <button onclick="reprintSavedReceipt('${t.receiptNo}')" class="px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-mitra-navy border border-blue-200 text-xs font-bold cursor-pointer">
+            <button type="button" onclick="reprintSavedReceipt('${t.receiptNo}')" class="px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-mitra-navy border border-blue-200 text-xs font-bold cursor-pointer">
               <i class="fa-solid fa-receipt mr-1"></i>80mm
             </button>
           </td>
         </tr>
       `).join('');
+    }
+
+    function renderDueReport() {
+      const fromIso = document.getElementById('duesFromDate')?.value || '';
+      const toIso = document.getElementById('duesToDate')?.value || '';
+      const dues = state.transactions.filter((t) => t.due > 0 && t.status !== 'Cancelled' && isDateInRange(t.issueDate, fromIso, toIso));
+
+      const totalDue = dues.reduce((s, t) => s + t.due, 0);
+      document.getElementById('drTotalOutstanding').textContent = `₹${totalDue.toLocaleString('en-IN')}`;
+      document.getElementById('drPendingCount').textContent = dues.length;
+
+      document.getElementById('dueReportBody').innerHTML = dues.length ? dues.map((t) => `
+        <tr class="hover:bg-slate-50">
+          <td class="py-3 px-3"><span class="font-mono font-bold text-mitra-navy block">${t.receiptNo}</span><span class="text-[11px] text-slate-500">${formatIsoToDisplay(t.issueDate)}</span></td>
+          <td class="py-3 px-3"><p class="font-semibold">${t.studentName}</p><p class="text-[11px] text-slate-500">${t.admClass}</p></td>
+          <td class="py-3 px-3 font-mono text-xs">${t.contact}</td>
+          <td class="py-3 px-3">${formatFullItemTitle(getVariantById(t.variantId))}</td>
+          <td class="py-3 px-3 text-right font-semibold">₹${t.total}</td>
+          <td class="py-3 px-3 text-right text-emerald-700 font-semibold">₹${t.paid}</td>
+          <td class="py-3 px-3 text-right font-extrabold text-rose-700">₹${t.due}</td>
+          <td class="py-3 px-3 text-center">
+            <div class="inline-flex gap-1">
+              <button type="button" onclick="showToast('Sent SMS/WhatsApp due reminder to ${t.studentName} (${t.contact})', 'info')" class="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold cursor-pointer">Remind</button>
+              <button type="button" onclick="collectStudentDue('${t.id}')" class="px-2.5 py-1 rounded-lg bg-emerald-700 text-white text-xs font-bold cursor-pointer">Collect Due</button>
+            </div>
+          </td>
+        </tr>
+      `).join('') : `<tr><td colspan="8" class="py-8 text-center text-xs text-slate-500">No pending student dues in selected range.</td></tr>`;
     }
 
     function collectStudentDue(id) {
@@ -2197,7 +3373,9 @@
       lbl.textContent = diff === 0 ? '₹0 (Balanced)' : `${diff > 0 ? '+' : ''}₹${diff.toLocaleString('en-IN')}`;
     }
 
-    function closeCashierShift() { showToast('Cash Register Z-Report verified & locked!', 'success'); }
+    function closeCashierShift() {
+      showToast('Cash Register Z-Report verified & locked!', 'success');
+    }
 
     function exportTableCsv(type) {
       let rows = [], file = 'export.csv';
@@ -2233,7 +3411,10 @@
       showToast(`Exported ${file}`, 'success');
     }
 
-    function printActiveReport() { document.body.className = 'bg-slate-100 text-slate-800 font-sans antialiased print-report'; window.print(); }
+    function printActiveReport() {
+      document.body.className = 'bg-slate-100 text-slate-800 font-sans antialiased print-report';
+      window.print();
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('posIssueDate').value = TODAY_ISO;
